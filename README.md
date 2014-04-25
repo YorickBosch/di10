@@ -1,13 +1,13 @@
 di10
 ====
-
+<!-- <pre> and </pre> for github project page formatting -->
 <pre>
 +-----------------------------------+
 | Group 10                          |
 +----------------------+------------+
 | MEMBERS              | STUDENT ID |
 +----------------------+------------+
-| Axel Vugts           |  s.......  |
+| Axel Vugts           |  s1459570  |
 | Yorick Bosch         |  s1380109  |
 | Martijn Verkleij     |  s1466895  |
 | Ruben Groot Roessink |  s1468642  |
