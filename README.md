@@ -27,6 +27,6 @@ di10
 +------------------+-------------------------+
 | DELIVERABLE      | LOCATION                |
 +------------------+-------------------------+
-| Keuze project    | /design/verslag.pdf     |
+| Keuze project    | /design/project.pdf     |
 +------------------+-------------------------+
 </pre>
