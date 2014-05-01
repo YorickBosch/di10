@@ -22,11 +22,15 @@ di10
 | Trello | https://trello.com/m4team10  |
 +--------+------------------------------+
 
-+--------------------------------------------+
-| Documents/Deliverables                     |
-+------------------+-------------------------+
-| DELIVERABLE      | LOCATION                |
-+------------------+-------------------------+
-| Keuze project    | /design/project.pdf     |
-+------------------+-------------------------+
++--------------------------------------------------------------------------+
+| Documents/Deliverables                                                   |
++------------------+-------------------------------------------------------+
+| DELIVERABLE      | LOCATION(S)                                           |
++------------------+-------------------------------------------------------+
+| Keuze project    | /design/project.pdf                                   |
+| Databaseontwerp  | /design/schema.sql                                    |
+| Class Diagram    | /design/umldiagrams.vpp  /design/umldiagrams.xmi      |
+| Use Case Diagram | /design/umldiagrams.vpp  /design/umldiagrams.xmi      |
+| Mock-up          | /design/mockup.zip                                    |
++------------------+-------------------------------------------------------+
 </pre>
