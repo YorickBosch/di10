@@ -27,23 +27,21 @@ CREATE TABLE Artwork
     Description varchar(10000),
     Tags varchar(1000),
     Price NUMERIC(7,2) POSSIBLY NULL
-)
-
-CREATE TABLE SerialArtwork
-(   ID integer PRIMARY KEY,   
-    Name varchar(255),
-    Year smallint,
-    Description varchar(10000),
-    Tags varchar(1000),
-    Price NUMERIC(7,2),
     Series integer REFERENCES Series(ID)
 )
 
 CREATE TABLE Series
 (   ID integer,
     Name varchar(100),
-    Description varchar(10000),
+    Description varchar(10000)
 )
 
-
-
+CREATE TYPE serviceType AS ENUM('reservation', 'rent', 'purchase');
+CREATE TABLE Service
+(   ID integer PRIMARY KEY,
+    Customer integer REFERENCES Customer(ID),
+    Artwork integer REFERENCES Artwork(ID),
+    StartDate date,
+    ExpDate date,
+    PurchaseDate date
+)

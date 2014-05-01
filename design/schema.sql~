@@ -26,7 +26,7 @@ CREATE TABLE Artwork
     Year smallint,
     Description varchar(10000),
     Tags varchar(1000),
-    Price NUMERIC(7,2)
+    Price NUMERIC(7,2) POSSIBLY NULL
 )
 
 CREATE TABLE SerialArtwork
@@ -36,12 +36,13 @@ CREATE TABLE SerialArtwork
     Description varchar(10000),
     Tags varchar(1000),
     Price NUMERIC(7,2),
-    Series varchar(50) REFERENCES Series(Name)
+    Series integer REFERENCES Series(ID)
 )
 
 CREATE TABLE Series
-(   Name varchar(50)
-    Description varchar(10000),
+(   ID integer,
+    Name varchar(100),
+    Description varchar(10000)
 )
 
 
