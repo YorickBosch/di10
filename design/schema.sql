@@ -14,7 +14,7 @@ CREATE TABLE Customer
 );
 
 CREATE TABLE Subscription
-(   SubscriptionID integer PRIMARY KEY,
+(   ID integer PRIMARY KEY,
     Type integer REFERENCES SubscriptionType(ID),
     CustomerID integer REFERENCES Customer(ID),
     StartDate date,
@@ -22,7 +22,7 @@ CREATE TABLE Subscription
 );
 
 CREATE TABLE SubscriptionType
-(   ID PRIMARY KEY,
+(   ID integer PRIMARY KEY,
     Price NUMERIC(7,2)
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE Artwork
 );
 
 CREATE TABLE Series
-(   ID integer,
+(   ID integer PRIMARY KEY,
     Name varchar(100),
     Description varchar(10000)
 );
