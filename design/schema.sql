@@ -1,33 +1,44 @@
 CREATE TABLE Customer
 (   ID integer PRIMARY KEY,
-    FirstName varchar(100) POSSIBLY NULL,
-    LastName varchar(100) POSSIBLY NULL,
-    CompanyName varchar(100) POSSIBLY NULL,
-    Address varchar(150),
+    FirstName varchar(100) NULL,
+    LastName varchar(100) NULL,
+    CompanyName varchar(100) NULL,
+    Address varchar(100),
+    Zipcode varchar(6),
+    City varchar(60),
+    Country varchar(40),
     HashedPass char(100),
     Email varchar(150),
     Credits NUMERIC(7,2),
     PhoneNumber char(20)
 )
 
-CREATE TYPE subscriptionType AS ENUM('sad', 'ok', 'happy');
 CREATE TABLE Subscription
 (   SubscriptionID integer PRIMARY KEY,
-    Type subscriptionType,
+    Type integer REFERENCES SubscriptionType(ID),
     CustomerID integer REFERENCES Customer(ID),
-    Price NUMERIC(7,2),
     StartDate date,
     EndDate date
 )
 
+CREATE TABLE SubscriptionType
+(   ID PRIMARY KEY,
+    Price NUMERIC(7,2)
+)
+
+CREATE TYPE artType AS ENUM('schilderij','beeld','overig');
 CREATE TABLE Artwork
 (   ID integer PRIMARY KEY,   
     Name varchar(255),
     Year smallint,
     Description varchar(10000),
     Tags varchar(1000),
-    Price NUMERIC(7,2) POSSIBLY NULL
-    Series integer REFERENCES Series(ID)
+    Style char(20),
+    Period char(20),
+    Price NUMERIC(7,2) NULL,
+    Series integer REFERENCES Series(ID),
+    ArtType artType,
+    IsForSale boolean
 )
 
 CREATE TABLE Series
@@ -39,6 +50,7 @@ CREATE TABLE Series
 CREATE TYPE serviceType AS ENUM('reservation', 'rent', 'purchase');
 CREATE TABLE Service
 (   ID integer PRIMARY KEY,
+    ServiceType serviceType;
     Customer integer REFERENCES Customer(ID),
     Artwork integer REFERENCES Artwork(ID),
     StartDate date,
