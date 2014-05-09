@@ -13,6 +13,11 @@ CREATE TABLE Customer
     PhoneNumber char(20)
 );
 
+CREATE TABLE SubscriptionType
+(   ID integer PRIMARY KEY,
+    Price NUMERIC(7,2)
+);
+
 CREATE TABLE Subscription
 (   ID integer PRIMARY KEY,
     Type integer REFERENCES SubscriptionType(ID),
@@ -21,12 +26,13 @@ CREATE TABLE Subscription
     EndDate date
 );
 
-CREATE TABLE SubscriptionType
+CREATE TYPE artType AS ENUM('schilderij','beeld','overig');
+CREATE TABLE Series
 (   ID integer PRIMARY KEY,
-    Price NUMERIC(7,2)
+    Name varchar(100),
+    Description varchar(10000)
 );
 
-CREATE TYPE artType AS ENUM('schilderij','beeld','overig');
 CREATE TABLE Artwork
 (   ID integer PRIMARY KEY,   
     Name varchar(255),
@@ -39,12 +45,6 @@ CREATE TABLE Artwork
     Series integer REFERENCES Series(ID),
     ArtType artType,
     IsForSale boolean
-);
-
-CREATE TABLE Series
-(   ID integer PRIMARY KEY,
-    Name varchar(100),
-    Description varchar(10000)
 );
 
 CREATE TYPE serviceType AS ENUM('reservation', 'rent', 'purchase');
