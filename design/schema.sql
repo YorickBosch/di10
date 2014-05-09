@@ -50,7 +50,7 @@ CREATE TABLE Series
 CREATE TYPE serviceType AS ENUM('reservation', 'rent', 'purchase');
 CREATE TABLE Service
 (   ID integer PRIMARY KEY,
-    ServiceType serviceType;
+    ServiceType serviceType,
     Customer integer REFERENCES Customer(ID),
     Artwork integer REFERENCES Artwork(ID),
     StartDate date,
