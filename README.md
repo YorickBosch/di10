@@ -32,5 +32,6 @@ di10
 | Class Diagram    | /design/umldiagrams.vpp  /design/umldiagrams.xmi      |
 | Use Case Diagram | /design/umldiagrams.vpp  /design/umldiagrams.xmi      |
 | Mock-up          | /design/mockup.zip                                    |
+| Website          | /website/*                                            |
 +------------------+-------------------------------------------------------+
 </pre>
