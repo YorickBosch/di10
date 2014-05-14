@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Concordia Kunstverhuur">
+    <meta name="author" content="University of Twente M4 Team 10">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title>Collectie :: Concordia Kunstverhuur</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/concordia.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Navigatie in/uitschakelen</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Concordia Kunstverhuur</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hoe.html">Hoe het werkt</a></li>
+            <li class="active"><a href="collectie.html">Collectie</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <!-- Sign-in -->
+          <form class="navbar-form navbar-right" action="profiel.html" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="E-mail adres" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Wachtwoord" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Inloggen</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    <div class="container marketing">
+      <div class="page-header">
+        <h1>Collectie <small>voor particulieren en bedrijven</small></h1>
+      </div>
+        <div class="row well">
+        <!--Menubar on the left -->
+          
+          <form role="form" class="form-inline">
+            <div class="form-group">
+              <label for="name" class="sr-only">Titel</label>
+              <input type="text" class="form-control" id="name" placeholder="Titel">
+            </div>
+            <div class="form-group">
+              <label for="year" class="sr-only">Jaar</label>
+              <input type="text" class="form-control" id="year" placeholder="Jaar">
+            </div>
+            <div class="form-group">
+              <label for="artist" class="sr-only">Kunstenaar</label>
+              <select id="artist" class="form-control">
+                <option selected>Kunstenaar</option>
+                <option>Kunstenaar</option>
+                <option>Kunstenaar</option>
+                <option>Kunstenaar</option>
+                <option>Kunstenaar</option>
+                <option>Kunstenaar</option>
+                <option>Kunstenaar</option>
+                <option>Kunstenaar</option>
+                <option>Kunstenaar</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="style" class="sr-only">Stijl</label>
+              <select id="style" class="form-control">
+                <option selected>Stijl</option>
+                <option>Stijl</option>
+                <option>Stijl</option>
+                <option>Stijl</option>
+                <option>Stijl</option>
+                <option>Stijl</option>
+                <option>Stijl</option>
+                <option>Stijl</option>
+                <option>Stijl</option>
+                <option>Stijl</option>
+                <option>Stijl</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="techniek" class="sr-only">Techniek</label>
+              <select id="techniek" class="form-control">
+                <option selected>Techniek</option>
+                <option>Techniek</option>
+                <option>Techniek</option>
+                <option>Techniek</option>
+                <option>Techniek</option>
+                <option>Techniek</option>
+                <option>Techniek</option>
+                <option>Techniek</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="formaat" class="sr-only">Formaat</label>
+              <select id="formaat" class="form-control">
+                <option selected>Formaat</option>
+                <option>Formaat</option>
+                <option>Formaat</option>
+                <option>Formaat</option>
+                <option>Formaat</option>
+                <option>Formaat</option>
+                <option>Formaat</option>
+                <option>Formaat</option>
+                <option>Formaat</option>
+                <option>Formaat</option>
+              </select>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Koopbaar
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Toepassen</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+          </form>
+        </div><!-- /row -->
+        <!-- Main content -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <img src="img/nachtwacht.jpg" alt="...">
+                <div class="caption">
+                  <h3>Een kunstwerk</h3>
+                  <p>Een kunstwerk van ware klasse, door heel Nederland bekend en bemind.</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Huur nu</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                      <span class="sr-only">Meer...</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Reserveren</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Toevoegen aan...</li>
+                      <li><a href="#">Favorieten</a></li>
+                      <li><a href="#">Collectie</a></li>
+                      <li class="divider"></li>
+                      <li role="presentation" class="dropdown-header">Delen via...</li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                      <li><a href="#">Google+</a></li>
+                      <li><a href="#">E-mail</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <ul class="pagination">
+            <li class="disabled"><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+
+        <!-- /.blog-main -->
+        <!-- End main content -->  
+      </div>
+    </div> <!-- /container -->
+    <!-- Footer -->
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">&copy; Concordia Kunstverhuur 2014</p>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
