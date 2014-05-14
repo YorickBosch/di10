@@ -1,5 +1,5 @@
 package concordia.kunstverhuur;
 
 public class Collection {
-	/// Will this text make it?
+	// Will this text make it?
 }
