@@ -1,6 +1,6 @@
 package concordia.kunstverhuur;
 
-public class BootstrapPage {
+public class StandardPage {
 	public static String HOME = "/ConcordiaKunstverhuur/index.jsp";
 	public static String OVER = "/ConcordiaKunstverhuur/over.jsp";
 	public static String COLLECTIE = "/ConcordiaKunstverhuur/collectie.jsp";
@@ -19,14 +19,19 @@ public class BootstrapPage {
 		+ "<span class=\"icon-bar\"></span>\n"
 		+ "<span class=\"icon-bar\"></span>\n"
 		+ "</button>\n"
-		+ "<a class=\"navbar-brand\" href=\""+HOME
+		+ "<a class=\"navbar-brand\" href=\""+HOME+"\">Concordia Kunstverhuur</a>\n"
+        + "</div>\n"
+        + "<!-- Collect the nav links, forms, and other content for toggling -->\n"
+        + "<div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n"
+        + "<ul class=\"nav navbar-nav\">\n"
+		+ "<li><a class=\"active\" href=\""+HOME
 		+ "\">Home</a></li>\n"
 		+ "<li><a href=\""+OVER
 		+ "\">Hoe het werkt</a></li>"
         + "<li><a href=\""+COLLECTIE
         + "\">Collectie</a></li>\n"
         + "<li><a href=\""+CONTACT
-        + ">Contact</a></li>\n"
+        + "\">Contact</a></li>\n"
         + "</ul>\n"
         + "<!-- Sign-in -->\n"
         + "<form class=\"navbar-form navbar-right\" action=\"" + PROFIEL
@@ -36,13 +41,30 @@ public class BootstrapPage {
         + "</div>\n"
         + "<div class=\"form-group\">\n"
         + "<input type=\"password\" placeholder=\"Wachtwoord\" class=\"form-control\">"
-        + "</div>"
+        + "</div>\n"
         + "<button type=\"submit\" class=\"btn btn-success\">Inloggen</button>"
         + "</form>"
         + "</div><!-- /.navbar-collapse -->"
         + "</div><!-- /.container-fluid -->"
         + "</nav>";
 		return header;
+	}
+	
+	public static String getFooter() {
+		String footer = "";
+	    footer += "<!-- Footer -->\n"
+	    		+ "<div id=\"footer\">\n"
+	    		+ "<div class=\"container\">\n"
+	    		+ "<p class=\"text-muted\">&copy; Concordia Kunstverhuur 2014</p>\n"
+	    		+ "</div>\n</div>\n\n"
+	    		+ "<!-- Bootstrap core JavaScript\n"
+	    		+ "================================================== -->\n"
+	    		+ "<!-- Placed at the end of the document so the pages load faster -->\n"
+	    		+ "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script> \n"
+	    		+ "<script src=\"js/bootstrap.min.js\"></script>\n"
+	    		+ "<!-- Bootstrap plugin JavaScript -->\n"
+	    		+ "<script src=\"js/bootstrap-lightbox.min.js\"></script>";
+		return footer;
 	}
 	
 	
