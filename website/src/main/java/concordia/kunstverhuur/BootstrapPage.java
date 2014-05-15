@@ -42,7 +42,8 @@ public class BootstrapPage {
         + "</div><!-- /.navbar-collapse -->"
         + "</div><!-- /.container-fluid -->"
         + "</nav>";
-
 		return header;
 	}
+	
+	
 }
