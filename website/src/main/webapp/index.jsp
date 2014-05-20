@@ -1,15 +1,15 @@
-<%@page import="concordia.kunstverhuur.Collection"%>
+<%@page import="concordia.kunstverhuur.Collectie"%>
 <%@page import="concordia.kunstverhuur.StandardPage"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 	<%@include file="includes/head.jsp" %>
 </head>
 <body>
 <%
-	out.write(StandardPage.getHeader("index"));
+	out.write(StandardPage.getHeader("index", request));
 %>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -45,13 +45,16 @@
         </div>
         <div class="panel-body">
           <div class="row">
-          <%=Collection.getMainPageItem(0)%>
-          <%=Collection.getMainPageItem(0)%>
-          <%=Collection.getMainPageItem(0)%>
+          <%
+          for (int i = 0; i < 6; i++) {
+        	  out.write(Collectie.getMainPageItem(0, 3));
+          }
+          %>
+          
           </div>
         </div>
       </div>
     </div>
-    
+    <% out.write(StandardPage.getFooter()); %>
 </body>
 </html>

@@ -1,5 +1,5 @@
 CREATE TABLE Customer
-(   ID integer PRIMARY KEY,
+(   ID integer PRIMARY KEY, --mogelijk verandering naar String voor gebruik als username
     FirstName varchar(100) NULL,
     LastName varchar(100) NULL,
     CompanyName varchar(100) NULL,
@@ -21,7 +21,7 @@ CREATE TABLE SubscriptionType
 CREATE TABLE Subscription
 (   ID integer PRIMARY KEY,
     Type integer REFERENCES SubscriptionType(ID),
-    CustomerID integer REFERENCES Customer(ID),
+    CustomerID integer REFERENCES Customer(ID), --zie referentie
     StartDate date,
     EndDate date
 );
@@ -51,7 +51,7 @@ CREATE TYPE serviceType AS ENUM('reservation', 'rent', 'purchase');
 CREATE TABLE Service
 (   ID integer PRIMARY KEY,
     ServiceType serviceType,
-    Customer integer REFERENCES Customer(ID),
+    Customer integer REFERENCES Customer(ID), --zie referentie
     Artwork integer REFERENCES Artwork(ID),
     StartDate date,
     ExpDate date,

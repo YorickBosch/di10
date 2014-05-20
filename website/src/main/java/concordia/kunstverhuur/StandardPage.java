@@ -1,13 +1,18 @@
 package concordia.kunstverhuur;
 
+
+import javax.servlet.http.HttpServletRequest;
+
 public class StandardPage {
 	public static String HOME = "/ConcordiaKunstverhuur/index.jsp";
 	public static String OVER = "/ConcordiaKunstverhuur/over.jsp";
 	public static String COLLECTIE = "/ConcordiaKunstverhuur/collectie.jsp";
 	public static String CONTACT = "/ConcordiaKunstverhuur/contact.jsp";
+	public static String LOGIN = "/ConcordiaKunstverhuur/login";
 	public static String PROFIEL = "/ConcordiaKunstverhuur/profiel.jsp";
+	public static String LOGINFAILED = "/ConcordiaKunstverhuur/loginfailed.jsp";
 	
-	public static String getHeader(String activePage) {
+	public static String getHeader(String activePage, HttpServletRequest request){
 		
 		String header = "";
 		header += "<nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">\n"
@@ -32,19 +37,34 @@ public class StandardPage {
         + "\">Collectie</a></li>\n"
         + "<li><a href=\""+CONTACT
         + "\">Contact</a></li>\n"
-        + "</ul>\n"
-        + "<!-- Sign-in -->\n"
-        + "<form class=\"navbar-form navbar-right\" action=\"" + PROFIEL
-        + "\" role=\"form\">\n"
-        + "<div class=\"form-group\">\n"
-        + "<input type=\"text\" placeholder=\"E-mail adres\" class=\"form-control\">"
-        + "</div>\n"
-        + "<div class=\"form-group\">\n"
-        + "<input type=\"password\" placeholder=\"Wachtwoord\" class=\"form-control\">"
-        + "</div>\n"
-        + "<button type=\"submit\" class=\"btn btn-success\">Inloggen</button>"
-        + "</form>"
-        + "</div><!-- /.navbar-collapse -->"
+        + "</ul>\n";
+		String user = (String) request.getSession().getAttribute("current_user");
+		if (user != null) {
+			header += "<!-- Sign-in -->\n"
+			        + "<form class=\"navbar-form navbar-right\" method=\"POST\" action=\"" + LOGIN
+			        + "\" role=\"form\">\n"
+			        + "<div class=\"form-group\">\n"
+			        + "<input type=\"hidden\" class=\"form-control\" name=\"logout\">\n"
+			        + "</div>\n" 
+			        + "<span>Ingelogd als <a href=\""+PROFIEL+"\">"+user+"</a></span>\n"
+			        + "<button type=\"submit\" class=\"btn btn-success\">Uitloggen</button>\n"
+			        + "</form>\n";
+		} else {
+			header += "<!-- Sign-in -->\n"
+			        + "<form class=\"navbar-form navbar-right\" method=\"POST\" action=\"" + LOGIN
+			        + "\" role=\"form\">\n"
+			        + "<div class=\"form-group\">\n"
+			        + "<input type=\"text\" placeholder=\"E-mail adres\" class=\"form-control\" name=\"user\">\n"
+			        + "</div>\n"
+			        + "<div class=\"form-group\">\n"
+			        + "<input type=\"password\" placeholder=\"Wachtwoord\" class=\"form-control\" name=\"pass\">\n"
+			        + "</div>\n"
+			        + "<button type=\"submit\" class=\"btn btn-success\">Inloggen</button>\n"
+			        + "</form>\n";
+		}
+			
+		
+        header += "</div><!-- /.navbar-collapse -->"
         + "</div><!-- /.container-fluid -->"
         + "</nav>";
 		return header;
@@ -61,9 +81,9 @@ public class StandardPage {
 	    		+ "================================================== -->\n"
 	    		+ "<!-- Placed at the end of the document so the pages load faster -->\n"
 	    		+ "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script> \n"
-	    		+ "<script src=\"js/bootstrap.min.js\"></script>\n"
+	    		+ "<script src=\"/ConcordiaKunstverhuur/js/bootstrap.min.js\"></script>\n"
 	    		+ "<!-- Bootstrap plugin JavaScript -->\n"
-	    		+ "<script src=\"js/bootstrap-lightbox.min.js\"></script>";
+	    		+ "<script src=\"/ConcordiaKunstverhuur/js/bootstrap-lightbox.min.js\"></script>";
 		return footer;
 	}
 	

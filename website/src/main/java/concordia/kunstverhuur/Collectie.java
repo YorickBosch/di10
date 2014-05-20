@@ -2,7 +2,9 @@ package concordia.kunstverhuur;
 
 import java.util.HashMap;
 
-public class Collection {
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
+
+public class Collectie {
 	public static HashMap<String,Object> getArtworkFromDatabase(int ID) {
 		HashMap<String,Object> artwork = new HashMap<String,Object>();
 		if (ID == 0) {
@@ -14,12 +16,21 @@ public class Collection {
 		return artwork;
 	}
 	
-	public static String getMainPageItem(int ID) {
+	public static String getMainPageItem(int ID, int columncount) {
+		String divclass;
+		switch (columncount) {
+		case 3: divclass = "col-sm-6 col-md-4";
+				break;
+		case 4: divclass = "col-xs-12 col-sm-6 col-md-3";
+				break;
+		default: divclass = "col-sm-6 col-md-4";
+				break;
+		}
 		
 		
 		HashMap<String, Object> item = getArtworkFromDatabase(ID);
 		String header = "";
-		header += "<div class=\"col-sm-6 col-md-4\">\n"
+		header += "<div class=\""+divclass+"\">\n"
 				+ "<div class=\"thumbnail\">\n"
 				+ "<img src=\""+(String) item.get("url")+"\" alt=\"...\">\n"
 				+ "<div class=\"caption\">\n"
@@ -47,4 +58,6 @@ public class Collection {
                 + "</ul>\n</div>\n</div>\n</div>\n</div>\n";
 		return header;
 	}
+	
+	
 }
