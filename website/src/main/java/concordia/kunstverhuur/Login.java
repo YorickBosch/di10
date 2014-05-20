@@ -27,7 +27,8 @@ public class Login extends HttpServlet {
 			user.setVoorNaam("Unfinity");
 			user.setAchterNaam("Numberwang");
 			HashMap<String,String> adres = new HashMap<String,String>();
-			adres.put("adres", "Twentington 20");
+			adres.put("straat", "Twentington 20");
+			adres.put("huisnummer", "20");
 			adres.put("postcode", "2000NW");
 			adres.put("stad", "Twelvty-hundred-and-Neeb");
 			adres.put("land", "Timboektoe");			
@@ -52,8 +53,9 @@ public class Login extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else if (user != null) {
-			if (getUserFromDatabase(user, password) != null) {
-				request.getSession().setAttribute("current_user", user);
+			UserBean userBean = getUserFromDatabase(user, password);
+			if (userBean != null) {
+				request.getSession().setAttribute("current_user", userBean);
 				
 				try {
 					response.sendRedirect(StandardPage.HOME);

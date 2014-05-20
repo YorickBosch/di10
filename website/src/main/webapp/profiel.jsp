@@ -1,7 +1,13 @@
+<%@page import="concordia.kunstverhuur.UserBean"%>
 <%@page import="concordia.kunstverhuur.Collectie"%>
 <%@page import="concordia.kunstverhuur.StandardPage"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+UserBean user = (UserBean) request.getSession().getAttribute("current_user");
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,42 +36,45 @@
         <div class="tab-pane fade in active" id="profiel">
           <h2>Profiel</h2>
             <form class="form-horizontal" role="form">
-              <div class="form-group">
+              <%
+              if(user.getBedrijfsNaam() != null) {%>
+           	  <div class="form-group">
                 <label for="companyName" class="col-sm-2 control-label">Bedrijfsnaam</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="companyName" value="Concordia Enschede" disabled>
+                  <input type="text" class="form-control" id="companyName" value="<%=user.getBedrijfsNaam()%>" disabled>
                 </div>
               </div>
+              <% } %>
               <div class="form-group">
                 <label for="firstName" class="col-sm-2 control-label">Naam</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" id="firstName" value="Jan" disabled>
+                  <input type="text" class="form-control" id="firstName" value="<%=user.getVoorNaam()%>" disabled>
                 </div>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" id="lastName" value="Jansen" disabled>
+                  <input type="text" class="form-control" id="lastName" value="<%=user.getAchterNaam()%>" disabled>
                 </div>
               </div>
               <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">E-mail adres</label>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="email" placeholder="info@concordia.nl" disabled>
+                  <input type="email" class="form-control" id="email" placeholder="<%=user.getEmail()%>" disabled>
                 </div>
               </div>
               <div class="form-group">
                 <label for="street" class="col-sm-2 control-label">Adresgegevens</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" id="street" placeholder="Straatnaam" value="Het Rozendaal" disabled>
+                  <input type="text" class="form-control" id="street" placeholder="Straatnaam" value="<%=user.getAdres().get("straat")%>" disabled>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" id="nr" value="21" disabled>
+                  <input type="text" class="form-control" id="nr" value="<%=user.getAdres().get("huisnummer")%>" disabled>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-2 col-sm-offset-2">
-                  <input type="text" class="form-control" id="postalcode" value="7523 XG" disabled>
+                  <input type="text" class="form-control" id="postalcode" value="<%=user.getAdres().get("postcode")%>" disabled>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" id="city" value="Enschede" disabled>
+                  <input type="text" class="form-control" id="city" value="<%=user.getAdres().get("stad")%>" disabled>
                 </div>
               </div>
               <div class="col-sm-offset-2 col-sm-4">
