@@ -8,7 +8,7 @@ CREATE TABLE Customer
     City varchar(60),
     Country varchar(40),
     Password char(64),
-    Email varchar(150),
+    Email varchar(150) PRIMARY KEY,
     Credits NUMERIC(7,2),
     PhoneNumber char(20)
 );
@@ -70,8 +70,7 @@ CREATE TABLE Artist
 );
 
 CREATE TABLE MadeBy
-(   PRIMARY KEY(ArtworkID integer,
-    ArtistID integer),
-    ArtworkID REFERENCES Artwork(ID),
-    ArtistID REFERENCES Artist(ID)
+(   ArtworkID integer REFERENCES Artwork(ID),
+    ArtistID integer REFERENCES Artist(ID),
+    PRIMARY KEY(ArtworkID, ArtistID)
 );
