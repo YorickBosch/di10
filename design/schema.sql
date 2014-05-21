@@ -7,7 +7,7 @@ CREATE TABLE Customer
     Zipcode varchar(6),
     City varchar(60),
     Country varchar(40),
-    Password char(100),
+    Password char(64),
     Email varchar(150),
     Credits NUMERIC(7,2),
     PhoneNumber char(20)
