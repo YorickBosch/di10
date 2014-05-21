@@ -3,12 +3,11 @@ CREATE TABLE Customer
     FirstName varchar(100) NULL,
     LastName varchar(100) NULL,
     CompanyName varchar(100) NULL,
-    Street varchar(100),
-    Number varchar(10),
+    Address varchar(100),
     Zipcode varchar(6),
     City varchar(60),
     Country varchar(40),
-    Password char(100),
+    HashedPass char(100),
     Email varchar(150),
     Credits NUMERIC(7,2),
     PhoneNumber char(20)
@@ -68,8 +67,10 @@ CREATE TABLE Artist
 );
 
 CREATE TABLE MadeBy
-(   PRIMARY KEY(ArtworkID integer,
-    ArtistID integer),
+(   ArtworkID integer,
+    ArtistID integer,
+    PRIMARY KEY(ArtworkID,
+    ArtistID),
     ArtworkID REFERENCES Artwork(ID),
     ArtistID REFERENCES Artist(ID)
 );
