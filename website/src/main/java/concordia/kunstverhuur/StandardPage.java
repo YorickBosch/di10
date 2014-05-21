@@ -9,6 +9,7 @@ public class StandardPage {
 	public static String COLLECTIE = "/ConcordiaKunstverhuur/collectie.jsp";
 	public static String CONTACT = "/ConcordiaKunstverhuur/contact.jsp";
 	public static String LOGIN = "/ConcordiaKunstverhuur/login";
+	public static String REGISTREER = "/ConcordiaKunstverhuur/registreer";
 	public static String PROFIEL = "/ConcordiaKunstverhuur/profiel.jsp";
 	public static String LOGINFAILED = "/ConcordiaKunstverhuur/loginfailed.jsp";
 	
