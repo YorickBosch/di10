@@ -58,3 +58,17 @@ CREATE TABLE Service
     ExpDate date,
     PurchaseDate date
 );
+
+CREATE TABLE Artist
+(   ID integer PRIMARY KEY,
+    Name varchar(255),
+    DateOfBirth date,
+    DateOfDeath data
+);
+
+CREATE TABLE MadeBy
+(   PRIMARY KEY(ArtworkID integer,
+    ArtistID integer),
+    ArtworkID REFERENCES Artwork(ID),
+    ArtistID REFERENCES Artist(ID)
+);
