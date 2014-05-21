@@ -6,8 +6,6 @@
 	
 	<link rel="shortcut icon" href="favicon.ico">
 
-    <title>Concordia Kunstverhuur</title>
-
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
