@@ -44,7 +44,8 @@ CREATE TABLE Artwork
     Price NUMERIC(7,2) NULL,
     Series integer REFERENCES Series(ID),
     ArtType artType,
-    IsForSale boolean
+    IsForSale boolean,
+    Colour char(20)
 );
 
 CREATE TYPE serviceType AS ENUM('reservation', 'rent', 'purchase');
