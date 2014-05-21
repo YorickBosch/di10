@@ -1,8 +1,8 @@
+package concordia.kunstverhuur;
+
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
-
-package concordia.kunstverhuur;
 
 public class DB {
 	private String dbUser = "di10";
