@@ -1,14 +1,14 @@
 CREATE TABLE Customer
-(   ID integer PRIMARY KEY, --mogelijk verandering naar String voor gebruik als username
-    FirstName varchar(100) NULL,
+(   FirstName varchar(100) NULL,
     LastName varchar(100) NULL,
     CompanyName varchar(100) NULL,
-    Address varchar(100),
+    Street varchar(100),
+    Number varchar(10),
     Zipcode varchar(6),
     City varchar(60),
     Country varchar(40),
-    HashedPass char(100),
-    Email varchar(150),
+    Password char(64),
+    Email varchar(150) PRIMARY KEY,
     Credits NUMERIC(7,2),
     PhoneNumber char(20)
 );
@@ -21,7 +21,7 @@ CREATE TABLE SubscriptionType
 CREATE TABLE Subscription
 (   ID integer PRIMARY KEY,
     Type integer REFERENCES SubscriptionType(ID),
-    CustomerID integer REFERENCES Customer(ID), --zie referentie
+    CustomerID varchar(150) REFERENCES Customer(Email), --zie referentie
     StartDate date,
     EndDate date
 );
@@ -44,16 +44,33 @@ CREATE TABLE Artwork
     Price NUMERIC(7,2) NULL,
     Series integer REFERENCES Series(ID),
     ArtType artType,
-    IsForSale boolean
+    IsForSale boolean,
+    Colour char(20),
+    Height integer,
+    Width integer,
+    Depth integer
 );
 
 CREATE TYPE serviceType AS ENUM('reservation', 'rent', 'purchase');
 CREATE TABLE Service
 (   ID integer PRIMARY KEY,
     ServiceType serviceType,
-    Customer integer REFERENCES Customer(ID), --zie referentie
+    Customer varchar(150) REFERENCES Customer(Email), --zie referentie
     Artwork integer REFERENCES Artwork(ID),
     StartDate date,
-    ExpDate date,
+    ExpDate date NULL,
     PurchaseDate date
+);
+
+CREATE TABLE Artist
+(   ID integer PRIMARY KEY,
+    Name varchar(255),
+    DateOfBirth date,
+    DateOfDeath date
+);
+
+CREATE TABLE MadeBy
+(   ArtworkID integer REFERENCES Artwork(ID),
+    ArtistID integer REFERENCES Artist(ID),
+    PRIMARY KEY(ArtworkID, ArtistID)
 );
