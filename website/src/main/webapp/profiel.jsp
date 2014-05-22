@@ -37,21 +37,21 @@ UserBean user = (UserBean) request.getSession().getAttribute("current_user");
           <h2>Profiel</h2>
             <form class="form-horizontal" role="form">
               <%
-              if(user.getBedrijfsNaam() != null) {%>
+              if(user.getBedrijfsnaam() != null) {%>
            	  <div class="form-group">
                 <label for="companyName" class="col-sm-2 control-label">Bedrijfsnaam</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="companyName" value="<%=user.getBedrijfsNaam()%>" disabled>
+                  <input type="text" class="form-control" id="companyName" value="<%=user.getBedrijfsnaam()%>" disabled>
                 </div>
               </div>
               <% } %>
               <div class="form-group">
                 <label for="firstName" class="col-sm-2 control-label">Naam</label>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" id="firstName" value="<%=user.getVoorNaam()%>" disabled>
+                  <input type="text" class="form-control" id="firstName" value="<%=user.getVoornaam()%>" disabled>
                 </div>
                 <div class="col-sm-5">
-                  <input type="text" class="form-control" id="lastName" value="<%=user.getAchterNaam()%>" disabled>
+                  <input type="text" class="form-control" id="lastName" value="<%=user.getAchternaam()%>" disabled>
                 </div>
               </div>
               <div class="form-group">

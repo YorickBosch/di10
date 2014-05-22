@@ -4,45 +4,37 @@ import java.util.HashMap;
 
 public class UserBean {
 	
-	private String userName = null;
-	private String voorNaam = null;
-	private String achterNaam = null;
-	private String bedrijfsNaam = null;
+	private String Voornaam = null;
+	private String Achternaam = null;
+	private String Bedrijfsnaam = null;
 	private HashMap<String, String> adres = null;
 	private String email = null;
 	private String telefoonNummer = null;
 	
 	public UserBean() {}
 	
-	public String getUserName() {
-		return userName;
+	
+	public String getVoornaam() {
+		return Voornaam;
 	}
 	
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setVoornaam(String voorNaam) {
+		this.Voornaam = voorNaam;
 	}
 	
-	public String getVoorNaam() {
-		return voorNaam;
+	public String getAchternaam() {
+		return Achternaam;
+	}
+	public void setAchternaam(String achterNaam) {
+		this.Achternaam = achterNaam;
 	}
 	
-	public void setVoorNaam(String voorNaam) {
-		this.voorNaam = voorNaam;
-	}
-	
-	public String getAchterNaam() {
-		return achterNaam;
-	}
-	public void setAchterNaam(String achterNaam) {
-		this.achterNaam = achterNaam;
-	}
-	
-	public String getBedrijfsNaam() {
-		return bedrijfsNaam;
+	public String getBedrijfsnaam() {
+		return Bedrijfsnaam;
 	}
 	
 	public void setBedrijfsNaam(String bedrijfsNaam) {
-		this.bedrijfsNaam = bedrijfsNaam;
+		this.Bedrijfsnaam = bedrijfsNaam;
 	}
 	
 	public HashMap<String, String> getAdres() {

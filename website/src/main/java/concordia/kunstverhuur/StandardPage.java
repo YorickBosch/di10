@@ -55,7 +55,7 @@ public class StandardPage {
 			        + "<div class=\"form-group\">\n"
 			        + "<input type=\"hidden\" class=\"form-control\" name=\"logout\">\n"
 			        + "</div>\n" 
-			        + "<span>Ingelogd als <a href=\""+PROFIEL+"\">"+user.getUserName()+"</a></span>\n"
+			        + "<span>Ingelogd als <a href=\""+PROFIEL+"\">"+user.getAchternaam()+"</a></span>\n"
 			        + "<button type=\"submit\" class=\"btn btn-success\">Uitloggen</button>\n"
 			        + "</form>\n";
 		} else {
