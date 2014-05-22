@@ -1,8 +1,6 @@
 package concordia.kunstverhuur;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -19,13 +17,14 @@ public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public static UserBean getUserFromDatabase(String username, String password) {
-		UserBean user = new UserBean();
+		UserBean user = null;
 		Connection con = DB.getConnection();
 		Statement st = null;
 		ResultSet rs = null;
 		try {
 			st = con.createStatement();
 	        rs = st.executeQuery("SELECT COUNT(Email) FROM Customer WHERE Email='"+username+"' AND Password='"+password+"'");
+	        rs.next();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,7 +43,7 @@ public class Login extends HttpServlet {
 				adres.put("land", "Timboektoe");			
 				user.setAdres(adres);
 				user.setEmail("numberwang@mverkleij.nl");
-				user.setTelefoonNummer("+31 6 1234 5678");
+				user.setTelefoonNummer("+31612345678");
 			}
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
