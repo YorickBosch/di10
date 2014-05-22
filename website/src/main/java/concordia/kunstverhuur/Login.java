@@ -1,39 +1,57 @@
 package concordia.kunstverhuur;
 
-import java.awt.List;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import concordia.kunstverhuur.DB;
 public class Login extends HttpServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public static UserBean getUserFromDatabase(String username, String password) {
 		UserBean user = new UserBean();
-		// Zou een SQL-query moeten zijn
-		if (username.equals("numberwang")
-				&& password.equals("correcthorsebatterystaple")) {
-			user = new UserBean();
-			user.setUserName(username);
-			user.setVoorNaam("Unfinity");
-			user.setAchterNaam("Numberwang");
-			HashMap<String,String> adres = new HashMap<String,String>();
-			adres.put("adres", "Twentington 20");
-			adres.put("postcode", "2000NW");
-			adres.put("stad", "Twelvty-hundred-and-Neeb");
-			adres.put("land", "Timboektoe");			
-			user.setAdres(adres);
-			user.setEmail("numberwang@mverkleij.nl");
-			user.setTelefoonNummer("+31 6 1234 5678");
+		Connection con = DB.getConnection();
+		Statement st = null;
+		ResultSet rs = null;
+		try {
+			st = con.createStatement();
+	        rs = st.executeQuery("SELECT COUNT(Email) FROM Customer WHERE Email='"+username+"' AND Password='"+password+"'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+		try {
+			if (Integer.parseInt(rs.getString(1)) > 0) {
+				user = new UserBean();
+				user.setVoornaam("Unfinity");
+				user.setAchternaam("Numberwang");
+				HashMap<String,String> adres = new HashMap<String,String>();
+				adres.put("straat", "Twentington 20");
+				adres.put("huisnummer", "20");
+				adres.put("postcode", "2000NW");
+				adres.put("stad", "Twelvty-hundred-and-Neeb");
+				adres.put("land", "Timboektoe");			
+				user.setAdres(adres);
+				user.setEmail("numberwang@mverkleij.nl");
+				user.setTelefoonNummer("+31 6 1234 5678");
+			}
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return user;
 	}
@@ -52,8 +70,9 @@ public class Login extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else if (user != null) {
-			if (getUserFromDatabase(user, password) != null) {
-				request.getSession().setAttribute("current_user", user);
+			UserBean userBean = getUserFromDatabase(user, password);
+			if (userBean != null) {
+				request.getSession().setAttribute("current_user", userBean);
 				
 				try {
 					response.sendRedirect(StandardPage.HOME);

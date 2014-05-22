@@ -38,15 +38,15 @@ public class StandardPage {
         + "<li><a href=\""+CONTACT
         + "\">Contact</a></li>\n"
         + "</ul>\n";
-		String user = (String) request.getSession().getAttribute("current_user");
+		UserBean user = (UserBean) request.getSession().getAttribute("current_user");
 		if (user != null) {
-			header += "<!-- Sign-in -->\n"
+			header += "<!-- Signed in -->\n"
 			        + "<form class=\"navbar-form navbar-right\" method=\"POST\" action=\"" + LOGIN
 			        + "\" role=\"form\">\n"
 			        + "<div class=\"form-group\">\n"
 			        + "<input type=\"hidden\" class=\"form-control\" name=\"logout\">\n"
 			        + "</div>\n" 
-			        + "<span>Ingelogd als <a href=\""+PROFIEL+"\">"+user+"</a></span>\n"
+			        + "<span>Ingelogd als <a href=\""+PROFIEL+"\">"+user.getAchternaam()+"</a></span>\n"
 			        + "<button type=\"submit\" class=\"btn btn-success\">Uitloggen</button>\n"
 			        + "</form>\n";
 		} else {
