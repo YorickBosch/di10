@@ -6,6 +6,7 @@
 <html>
 <head>
 <%@include file="includes/head.jsp"%>
+<title>Concordia Kunstverhuur</title>
 </head>
 <body>
 	<%
@@ -20,7 +21,7 @@
 				collectie huren. Je kunt de huurperiode verlengen en er is geen
 				aankoopverplichting.</p>
 			<p>
-				<a href="<%=StandardPage.OVER%>" class="btn btn-primary btn-lg"
+				<a href="<%=StandardPage.HOE%>" class="btn btn-primary btn-lg"
 					role="button">Meer weten? &raquo;</a>
 			</p>
 		</div>
@@ -37,7 +38,7 @@
 					onze omvangrijke collectie. Raak je aan het werk gehecht, dan kun
 					je het kunstwerk aanschaffen.</p>
 				<p>
-					<a class="btn btn-default" href="<%=StandardPage.OVER%>"
+					<a class="btn btn-default" href="<%=StandardPage.HOE%>"
 						role="button">Meer informatie &raquo;</a>
 				</p>
 			</div>
@@ -49,7 +50,7 @@
 					kantoorinrichting in representatief opzicht richting relaties.
 					Bovendien gaat er een inspirerende werking vanuit op uw personeel.</p>
 				<p>
-					<a class="btn btn-default" href="<%=StandardPage.OVER%>"
+					<a class="btn btn-default" href="<%=StandardPage.HOE%>"
 						role="button">Meer informatie &raquo;</a>
 				</p>
 			</div>
@@ -60,7 +61,7 @@
 					naar nieuw werk en nieuwe kunstenaars voor uitbreiding van haar
 					kunstverhuurcollectie.</p>
 				<p>
-					<a class="btn btn-default" href="<%=StandardPage.OVER%>"
+					<a class="btn btn-default" href="<%=StandardPage.HOE%>"
 						role="button">Meer informatie &raquo;</a>
 				</p>
 			</div>
